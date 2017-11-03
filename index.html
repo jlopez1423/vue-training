@@ -1,40 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title></title>
 </head>
 <body>
 
+<div id="root">
 
-<div id="app">
-	
-	<h1>{{ message }}</h1>
+    <input type="text" id="input" v-model="message">
 
-	<input v-model="message">
-
-	<pre>
-		
-		{{ $data | json }}
-
-	</pre>
-
+    <p>The vale of the input is {{ message }}</p>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.1/vue.js"></script>
 
+
 <script>
 
+    let data = {};
 
-	//Craeting a new instance of Vue
-	new Vue({
 
-		el: '#app', //Element binding
-		data: {
+    new Vue({
+        el: "#root",
 
-			message: 'Hello World'
-		}
-
-	})
+        data: {
+            message: 'Hello World'
+        }
+    });
 
 </script>
 

@@ -15,7 +15,7 @@
 
     <input id="input" type="text" v-model="newName">
 
-    <button v-on:click="addName">Add Name</button>
+    <button @click="addName">Add Name</button>
 
 </div>
 
@@ -33,14 +33,21 @@
         el: "#root",
 
         data: {
+
             newName: '',
 
             names: ['Joe', 'Mary', 'Jane', 'Jack']
+
         },
 
         methods: {
             addName() {
+
+                //Append the new name
                 this.names.push( this.newName );
+
+                //Clear the input
+                this.newName = '';
             }
         },
 

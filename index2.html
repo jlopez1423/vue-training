@@ -8,14 +8,17 @@
 
         .color-blue { color: blue; }
 
+        .is-loading { background: red;}
+
     </style>
 </head>
 <body>
 
 <div id="root">
 
-    <h1 :class="className">Hello World</h1>
+    <!--<h1 :class="className">Hello World</h1>-->
     <!--<button :title="title">Hover Me</button>-->
+    <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle Me</button>
 
 </div>
 
@@ -31,8 +34,16 @@
         data: {
 
 //            title: 'Now the title is being set through javascript'
-            className: 'color-red'
+//            className: 'color-red'
 
+            isLoading: false
+        },
+
+        methods: {
+
+            toggleClass() {
+                this.isLoading = true;
+            }
         }
     });
 
